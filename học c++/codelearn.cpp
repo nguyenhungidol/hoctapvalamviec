@@ -14,10 +14,7 @@ public:
     {
         return 3.14 * radius * radius;
     }
-    double getCircumference()
-    {
-        return 2 * 3.14 * radius;
-    }
+    
 };
 int main()
 {
@@ -25,7 +22,7 @@ int main()
     tron.getArea();
     tron.getCircumference();
     cout << tron.getArea() << endl;
-    cout << tron.getCircumference ()<< endl;
+   
 
     return 0;
 }
