@@ -1,28 +1,26 @@
 #include <iostream>
+
 using namespace std;
-class Circle
+
+class Student
 {
 private:
-    double radius;
-
+    string name;
+    int age;
+    int sumOfNumber = 0; //ban dau chua co co nen bien so la 0//khong khai bao bien tinh
 public:
-    Circle(double radius)
-    {
-        this->radius = radius;
+    Student(string name, int age)
+    { //phuong thuc khoi tao co truyen tham so
+        this->name = name;
+        this->age = age;
     }
-    double getArea()
-    {
-        return 3.14 * radius * radius;
-    }
-    
 };
 int main()
 {
-    Circle tron(7);
-    tron.getArea();
-    tron.getCircumference();
-    cout << tron.getArea() << endl;
-   
-
-    return 0;
+    Student s1("Hung", 18);
+    Student s2("Trang", 11);
+    s1.sumOfNumber = 2;
+    s2.sumOfNumber = 3;
+    cout << s1.sumOfNumber <, endl;
+    cout << s2.sumOfNumber <, endl;
 }
