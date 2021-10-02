@@ -1,26 +1,34 @@
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
-class Student
+class ArrayCalculator
 {
-private:
-    string name;
-    int age;
-    int sumOfNumber = 0; //ban dau chua co co nen bien so la 0//khong khai bao bien tinh
 public:
-    Student(string name, int age)
-    { //phuong thuc khoi tao co truyen tham so
-        this->name = name;
-        this->age = age;
+    static int sumOfArray(int arr[], int n)
+    {
+        int sum = 0;
+        for (int i = 0; i < n; i++)
+        {
+            sum += arr[i];
+        }
+        return sum;
+    }
+    static double sumOfArray(double arr[], int n)
+    {
+        double sum = 0;
+        for (int i = 0; i < n; i++)
+        {
+            sum += arr[i];
+        }
+    return sum;
     }
 };
 int main()
 {
-    Student s1("Hung", 18);
-    Student s2("Trang", 11);
-    s1.sumOfNumber = 2;
-    s2.sumOfNumber = 3;
-    cout << s1.sumOfNumber <, endl;
-    cout << s2.sumOfNumber <, endl;
+    int arr1[] = { 3, 4, 2 };
+	double arr2[] = { 1.3, 4.2, 6.7 };
+	cout << ArrayCalculator::sumOfArray(arr1, sizeof(int)) << endl;
+	cout << ArrayCalculator::sumOfArray(arr2, sizeof(double)) << endl;
+    return 0;
 }
