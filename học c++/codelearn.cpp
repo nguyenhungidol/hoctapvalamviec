@@ -1,76 +1,65 @@
-#include <iostream>
-using namespace std;
-class ArrayCalculator
-{
-public:
-    static int maxOfArray(int arr[], int n)
-    {
-        int maxValue = arr[0];
-        for (int i = 0; i < n; i++)
+        #include <iostream>
+        using namespace std;
+
+        class Person
         {
-            for (int j = i + 1; j < n; i++)
+        private:
+            string name;
+            string gender;
+
+        public:
+            Person(string name, string gender)
             {
-                if (arr[i] > arr[j])
-                {
-                    maxValue = arr[i];
-                }
+                this->name = name;
+                this->gender = gender;
             }
-        }
-        return maxValue;
-    }
-    static double maxOfArray(double arr[], int n)
-    {
-        double maxValue = arr[0];
-        for (int i = 0; i < n; i++)
+            string getName()
+            {
+                return name;
+            }
+            void setName(string name)
+            {
+                this->name = name;
+            }
+            string getGender()
+            {
+                return gender;
+            }
+            void setGender(string gender)
+            {
+                this->gender = gender;
+            }
+            void display()
+            {
+                cout << "Name: " << name << endl;
+                cout << "Gender: " << gender << endl;
+            }
+        };
+        class Student :  Person
         {
-            for (int j = i + 1; j < n; i++)
+        private:
+            int salary;
+        public:
+            Student(string name, string gender, int salary):Person(name,gender)
             {
-                if (arr[i] > arr[j])
-                {
-                    maxValue = arr[i];
-                }
+                this->salary = salary;
             }
-        }
-        return maxValue;
-    }
-    static double minOfArray(int arr[], int n)
-    {
-        double minValue = arr[0];
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = i + 1; j < n; i++)
+            int getSalary()
             {
-                if (arr[i] < arr[j])
-                {
-                    minValue = arr[i];
-                }
+                return salary;
             }
-        }
-        return minValue;
-    }
-    static double minOfArray(double arr[], int n)
-    {
-        double minValue = arr[0];
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = i + 1; j < n; i++)
+            void setSalary()
             {
-                if (arr[i] < arr[j])
-                {
-                    minValue = arr[i];
-                }
+                this->salary = salary;
             }
+            void display()
+            {
+                Person::display();
+                cout << "Salary: " << salary << endl;
+            }
+        };
+        int main(){
+            Student s("Trung","Male",1700);
+            s.display();
+            return 0;
         }
-        return minValue;
-    }
-};
-int main()
-{
-    int arr1[]={3, 7, 9, -5};
-    double arr2[]={3.4, 2.9, -6.8};
-    cout << ArrayCalculator::maxOfArray(arr1, sizeof(arr1) / sizeof(int)) << endl;
-    cout << ArrayCalculator::maxOfArray(arr2, sizeof(arr2) / sizeof(double)) << endl;
-    cout << ArrayCalculator::minOfArray(arr1, sizeof(arr1) / sizeof(int)) << endl;
-    cout << ArrayCalculator::minOfArray(arr2, sizeof(arr2) / sizeof(double)) << endl;
-    return 0;
-}
