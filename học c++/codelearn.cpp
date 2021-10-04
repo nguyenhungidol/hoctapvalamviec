@@ -1,26 +1,65 @@
-#include <iostream>
+        #include <iostream>
+        using namespace std;
 
-using namespace std;
+        class Person
+        {
+        private:
+            string name;
+            string gender;
 
-class Student
-{
-private:
-    string name;
-    int age;
-    int sumOfNumber = 0; //ban dau chua co co nen bien so la 0//khong khai bao bien tinh
-public:
-    Student(string name, int age)
-    { //phuong thuc khoi tao co truyen tham so
-        this->name = name;
-        this->age = age;
-    }
-};
-int main()
-{
-    Student s1("Hung", 18);
-    Student s2("Trang", 11);
-    s1.sumOfNumber = 2;
-    s2.sumOfNumber = 3;
-    cout << s1.sumOfNumber <, endl;
-    cout << s2.sumOfNumber <, endl;
-}
+        public:
+            Person(string name, string gender)
+            {
+                this->name = name;
+                this->gender = gender;
+            }
+            string getName()
+            {
+                return name;
+            }
+            void setName(string name)
+            {
+                this->name = name;
+            }
+            string getGender()
+            {
+                return gender;
+            }
+            void setGender(string gender)
+            {
+                this->gender = gender;
+            }
+            void display()
+            {
+                cout << "Name: " << name << endl;
+                cout << "Gender: " << gender << endl;
+            }
+        };
+        class Student :  Person
+        {
+        private:
+            int salary;
+        public:
+            Student(string name, string gender, int salary):Person(name,gender)
+            {
+                this->salary = salary;
+            }
+            int getSalary()
+            {
+                return salary;
+            }
+            void setSalary()
+            {
+                this->salary = salary;
+            }
+            void display()
+            {
+                Person::display();
+                cout << "Salary: " << salary << endl;
+            }
+        };
+        int main(){
+            Student s("Trung","Male",1700);
+            s.display();
+            return 0;
+        }
