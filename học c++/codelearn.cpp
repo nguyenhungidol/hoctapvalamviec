@@ -53,8 +53,8 @@ public:
     }
     void display()
     {
-        cout << "Employee name: " << name << endl;
-        cout << "Employee address: " << address << endl;
+        cout << "Employee name: " <<Person:: getName() << endl;
+        cout << "Employee address: " <<Person:: getAddress() << endl;
         cout << "Employee salary: " << salary << endl;
     }
 };
@@ -79,8 +79,8 @@ public:
     }
     void display()
     {
-        cout << "Customer name: " << name << endl;
-        cout << "Customer address: " << address << endl;
+        cout << "Customer name: " <<Person:: getName() << endl;
+        cout << "Customer address: " <<Person:: getAddress() << endl;
         cout << "Customer balance: " << balance << endl;
     }
 };
