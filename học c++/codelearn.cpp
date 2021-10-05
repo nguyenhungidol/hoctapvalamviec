@@ -1,65 +1,94 @@
-        #include <iostream>
-        using namespace std;
+#pragma once
+#include <iostream>
+using namespace std;
 
-        class Person
-        {
-        private:
-            string name;
-            string gender;
+class Person
+{
+private:
+    string name;
+    string address;
 
-        public:
-            Person(string name, string gender)
-            {
-                this->name = name;
-                this->gender = gender;
-            }
-            string getName()
-            {
-                return name;
-            }
-            void setName(string name)
-            {
-                this->name = name;
-            }
-            string getGender()
-            {
-                return gender;
-            }
-            void setGender(string gender)
-            {
-                this->gender = gender;
-            }
-            void display()
-            {
-                cout << "Name: " << name << endl;
-                cout << "Gender: " << gender << endl;
-            }
-        };
-        class Student :  Person
-        {
-        private:
-            int salary;
-        public:
-            Student(string name, string gender, int salary):Person(name,gender)
-            {
-                this->salary = salary;
-            }
-            int getSalary()
-            {
-                return salary;
-            }
-            void setSalary()
-            {
-                this->salary = salary;
-            }
-            void display()
-            {
-                Person::display();
-                cout << "Salary: " << salary << endl;
-            }
-        };
-        int main(){
-            Student s("Trung","Male",1700);
-            s.display();
-            return 0;
-        }
+public:
+    Person(string name, string address)
+    {
+        this->name = name;
+        this->address = address;
+    }
+    string getName()
+    {
+        return name;
+    }
+    void setName(string name)
+    {
+        this->name = name;
+    }
+    string getAddress()
+    {
+        return address;
+    }
+    void setAddress(string address)
+    {
+        this->address = address;
+    }
+    virtual void display() = 0;
+};
+
+class Employee : public Person
+{
+private:
+    int salary;
+
+public:
+    Employee(string name, string address, int salary) : Person(name, address)
+    {
+        this->salary = salary;
+    }
+    int getSalary()
+    {
+        return salary;
+    }
+    void setSalary(int salary)
+    {
+        this->salary = salary;
+    }
+    void display()
+    {
+        cout << "Employee name: " << name << endl;
+        cout << "Employee address: " << address << endl;
+        cout << "Employee salary: " << salary << endl;
+    }
+};
+
+class Customer : public Person
+{
+private:
+    int balance;
+
+public:
+    Customer(string name, string address, int balance) : Person(name, address)
+    {
+        this->balance = balance;
+    }
+    int getBalance()
+    {
+        return balance;
+    }
+    void setBalance(int balance)
+    {
+        this->balance = balance;
+    }
+    void display()
+    {
+        cout << "Customer name: " << name << endl;
+        cout << "Customer address: " << address << endl;
+        cout << "Customer balance: " << balance << endl;
+    }
+};
+int main()
+{
+    Person *p1 = new Employee("Hung", "TH", 10000);
+    Person *p2 = new Customer("Cuong", "BN", 15000);
+    p1->display();
+    p2->display();
+    return 0;
+}
