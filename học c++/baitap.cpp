@@ -1,13 +1,19 @@
-#include<iostream>
+#include <iostream>
+#include <math.h>
 
 using namespace std;
 
-int main(){
-    unsigned int a,b;
-    cin>>a>>b;
-    int scln;
-    if(scln<a=a&&scln%b==0){
-     cout<<scln<<" ";
+int main()
+{
+    char n;
+    cin >> n;
+    if (n >= 65 && n <= 129)
+    {
+        cout << "NO";
     }
-
+    else
+    {
+        cout << "YES";
+    }
+    return 0;
 }
