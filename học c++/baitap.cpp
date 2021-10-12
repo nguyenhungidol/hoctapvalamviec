@@ -1,19 +1,26 @@
 #include <iostream>
-#include <math.h>
 
 using namespace std;
-
+// xac dinh so dong va so cot
+// ki tu so va chu in ra la cai gi
+// i la dong j la cot
 int main()
 {
-    char n;
+    int n;
     cin >> n;
-    if (n >= 65 && n <= 129)
+    for (int i = 1; i <= n; i++)
     {
-        cout << "NO";
+
+        for (int j; j <= 2 * i - 2; j++)
+        {
+            cout << "~";
+        }
+        for (int j; j <= n - i + 1; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
     }
-    else
-    {
-        cout << "YES";
-    }
+
     return 0;
 }
