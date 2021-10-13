@@ -21,6 +21,6 @@ int main()
     Student s2("Trang", 11);
     s1.sumOfNumber = 2;
     s2.sumOfNumber = 3;
-    cout << s1.sumOfNumber <, endl;
-    cout << s2.sumOfNumber <, endl;
+    cout << s1.sumOfNumber << endl;
+    cout << s2.sumOfNumber << endl;
 }
