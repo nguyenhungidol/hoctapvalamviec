@@ -3,43 +3,35 @@
 
 using namespace std;
 
-int kiemtra(int n) // kiem tra cac chu so
+int check(int a[], int n)
 {
-        int s1 = 0;
-        int s9 = 0;
-    while (n)
+    for (int i = 0; i < n - 1; i++)//chi xet den i=n-2 boi vi neu i la phan tu cuoi trong mang se khong the 
+    //so sanh voi phan tu tiep theo 
     {
-        int phandu = n % 10; //xet tu hang don vi
-        if (phandu == 1)
-            s1 = 1;
-        if (phandu == 9)
-            s9 = 1; //day la k xuat hien so dep
-        n /= 10;
+        if (a[i] >= a[i + 1])
+        {
+            return 0;
+        }
     }
-    return s1 && s9;
+    return 1;
 }
 int main()
 {
     int n;
     cin >> n;
     int a[n];
-    int ok = 0;
-    for (int i = 0; i <n; i++)
-    {
-        cin>>a[i];
-    }
-    
     for (int i = 0; i < n; i++)
     {
-        if (kiemtra(a[i]))
-        {
-            cout << a[i] << endl;
-            ok = 1;
+        cin >> a[i];
+    }
+    int max=a[0];
+    for (int i = 0; i < n; i++)
+    {
+        if(a[i]>=max){
+            cout<<a[i]<<" ";
+        }if(a[i]>max){
+            max=a[i];
         }
     }
-    if (!ok)
-    {
-        cout << -1;
-    }
-    return 0;
+    
 }
