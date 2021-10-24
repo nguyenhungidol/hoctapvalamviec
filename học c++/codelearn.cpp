@@ -1,25 +1,27 @@
 #include <iostream>
+#include <algorithm>
+#include <cmath>
 using namespace std;
-int kiemtra(int n){
-    if(n%3==0){
-        cout<<n<<" ";
-    }
-    return 1;
-}
+
 int main()
 {
     int a, b;
     cin >> a >> b;
-    for (int i = b; i >= a; i--)
+    int bctd = a * b;
+    int bcbn = max(a, b);
+    if (a > 0 && b > 0 || a < 0 && b < 0)
     {
-        if (i % 3 == 0)
+        for (int i = bcbn; i <= bctd; i += bcbn)
         {
-            cout << i << " ";
-        } 
-        return i;
-        if (i % 3 != 0 || i < a || i > b)
-        {
-            cout << "NOT FOUND";
+            if (i % a == 0 && i % b == 0)
+            {
+                cout << i;
+            }
         }
     }
+    if (a > 0 && b < 0 || a < 0 && b > 0)
+    {
+        cout << bcbn;
+    }
+    return 0;
 }
