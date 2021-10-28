@@ -1,39 +1,28 @@
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
-int check(int a[], int n)
-{
-    for (int i = 0; i < n - 1; i++) //chi xet den i=n-2 boi vi neu i la phan tu cuoi trong mang se khong the
-    //so sanh voi phan tu tiep theo
-    {
-        if (a[i] >= a[i + 1])
-        {
-            return 0;
-        }
-    }
-    return 1;
-}
 int main()
 {
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
+    int a, b;
+    cin >> a >> b;
+    for (int i = 1; i <= a; i++)
     {
-        cin >> a[i];
-    }
-    int max = a[0];
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i] >= max)
+        int init=1;
+        int count=i;
+        for (int j = 1; j <= b; j++)
         {
-            cout << a[i] << " ";
+            if (j<=b-i)
+            {
+                cout <<count;
+                count++;
+            }else if(){
+                cout<<init;
+                init++;
+            }
+            
         }
-        if (a[i] > max)
-        {
-            max = a[i];
-        }
+        cout << endl;
     }
+    return 0;
 }
