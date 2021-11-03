@@ -2,6 +2,10 @@
 using namespace std;
 int main()
 {
+    int t;
+    cin >> t;
+    for (int i = 1; i <= t; i++)
+    {
     int n;
     cin >> n;
     int a[n];
@@ -11,28 +15,40 @@ int main()
     }
     int b[n];
     int res = 0;
-    int count = 1;
-    int index;
-    for (int i = 1; i < n; i++)
-    {
-        if (a[i] > a[i - 1])
+    int count = 0;
+    int dem = 1;
+        for (int i = 1; i < n; i++)
         {
-            count++;
+            if (a[i] > a[i - 1])
+            {
+                count++;
+            }
+            else
+            {
+                dem = 1;
+            }
+            if (dem > res)
+            {
+                res = dem;
+                b[0] = i - res + 1;
+                count = 1;
+            }
+            else if (dem == res)
+            {
+                b[count] = i - res + 1;
+                count++;
+            }
         }
-        else
+        cout << "Test: " << i << endl;
+        cout << res;
+        for (int i = 0; i < count; i++)
         {
-            count = 1;
+            for (int j = 0; j < res; j++)
+            {
+                cout << a[b[i] + j];
+            }
+            cout << endl;
         }
-        if (count > res)
-        {
-            res = count;
-            index=i-res+1;
-        }
-    }
-    cout<<res;
-    for (int i = 0; i < n; i++)
-    {
-    cout<<a[index+i]<<" ";
     }
     return 0;
 }
