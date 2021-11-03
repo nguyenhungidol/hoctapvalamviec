@@ -9,16 +9,20 @@ int main()
 	{
 		cin >> a[i];
 	}
-	long long count=0;
-	for (int i = 0; i < n; i++)
+	int res = 0;
+	int count = 1;
+	for (int i = 1; i < n; i++)
 	{
-		for (int j = i+1; j < n; j++)
+		if (a[i] != a[i + 1])
 		{
-			if(__gcd(a[i],a[j])==1){
-				count++;
-			}
+			count++;
 		}
+		else
+		{
+			count = 1;
+		}
+		res = max(res, count);
 	}
-	cout<<count;
+	cout << res;
 	return 0;
 }
