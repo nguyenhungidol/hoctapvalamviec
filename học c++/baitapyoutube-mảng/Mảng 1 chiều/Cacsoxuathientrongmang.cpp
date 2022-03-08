@@ -12,8 +12,8 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        int ok = 1;//bien nay dung de kiem tra xem dieu kien co dung k
-        for (int j = 0; j < i; j++)//kiem tra voi cac phan tu truoc
+        int ok = 1;                 // bien nay dung de kiem tra xem dieu kien co dung k
+        for (int j = 0; j < i; j++) // kiem tra voi cac phan tu truoc
         {
             if (a[i] == a[j])
             {
@@ -21,7 +21,7 @@ int main()
                 break;
             }
         }
-        if (ok)//neu dieu kien dung
+        if (ok) // neu dieu kien dung
         {
             cout << a[i] << " ";
         }

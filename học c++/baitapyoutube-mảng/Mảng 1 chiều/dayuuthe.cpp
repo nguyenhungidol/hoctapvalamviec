@@ -6,7 +6,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n = 0;
+        int n = 0;//dem so phan tu cua mang nhap vao
         int c = 0, l = 0;
         char kitu = ' ';
         while (kitu != '\n')

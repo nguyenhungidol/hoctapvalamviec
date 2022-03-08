@@ -15,8 +15,8 @@ int main()
         }
         int res = 1;   //bien luu ki luc
         int count = 0; //bien dem so day co do dai bang nhau
-        int b[n];      //mang luu cac phan tu trong day tang dai nhat
-        int dem = 1;   //bien dung de do do dai cua cac day
+        int b[n];      //mang luu cac day trong day tang dai nhat
+        int dem = 1;   //bien dung de đo độ dai cua cac day
         b[0] = 0;      //ban dau chua luu phan tu gi
         count = 1;
         for (int i = 1; i < n; i++)
