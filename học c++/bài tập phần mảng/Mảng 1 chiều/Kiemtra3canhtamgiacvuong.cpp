@@ -50,10 +50,10 @@ int main()
             scanf("%d", &x);
             a[i] = 1ll * x * x;
             sort(a, n);
-            if (check(a, n))
-                printf("YES\n");
-            else
-                printf("NO\n");
         }
+        if (check(a, n))
+            printf("YES\n");
+        else
+            printf("NO\n");
     }
 }
